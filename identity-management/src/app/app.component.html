@@ -1,36 +1,85 @@
-<!-- <h1>{{ title.toUpperCase()}}</h1>
-
-@for (Identity of Identities; track $index) {
-
-} -->
-<!-- <h2>{{Identities.firstName}} {{Identities.lastName}}</h2> -->
-
 <div class="card">
   <div class="card-header h1">
     {{ title.toUpperCase()}}
   </div>
   <div class="card-body">
-    <h5 class="card-title">Set of Identities</h5>
+    <h3 class="card-title">Inset Identity</h3>
     <div class="grid">
-      <div class = "row" *ngFor="let Identity of Identities">
-        <div class = "col">
+      <div class="row m-4">
+        <div class="col">
+          <label class="form-label" for="frmfirstname" > First Name:</label>
+          <input class='form-control' type="text" id="frmFirstname" placeholder="must contain atleast 3 characters" />
+        </div>
+        <div class="col">
+          <label class="form-label" for="frmLastname">Last Name:</label>
+          <input class="form-control" type="text" id="frmLastname" placeholder="must contain atleast 3 characters"/>
+        </div>        
+      </div>
+      <div class="row m-4">
+        <div class="col">
+          <label class="form-label" for="frmpnr" > Personal Number:</label>
+          <input class='form-control' type="number" id="frmpnr"  />
+        </div>
+        <div class="col">
+          <label class="form-label" for="frmAccname">Account Name:</label>
+          <input class="form-control" type="text" id="frmAccname" />
+        </div>        
+      </div>
+      <div class="row m-4">
+        <div class="col">
+          <label class="form-label" for="frmDepartment"> Department:</label>
+          <input class='form-control' type="text" id="frmDepartment" />
+        </div>
+        <div class="col">
+          <label class="form-label" for="frmCostcenter"> Cost Center:</label>
+          <input class="form-control" type="text" id="frmCostcenter" />
+        </div>        
+      </div>
+      <div class="row m-4">
+        <div class="col">
+          <label class="form-label" for="frmStartdate"> Start Date:</label>
+          <input class='form-control' type="date" id="frmStartdate" />
+        </div>
+        <div class="col">
+          <label class="form-label" for="frmEnddate"> End Date:</label>
+          <input class="form-control" type="date" id="frmEnddate" />
+        </div>        
+      </div>
+      <div class="row m-4">
+        <!-- Submit Button -->
+        <div class="col">
+          <button class="btn btn-primary">Submit</button>
+        </div>        
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title">Set of Identities</h3>
+      <div class="grid">
+        <div class="row" *ngFor="let Identity of Identities">
           <hr>
-          <div class = "h5 mt-2" >
-            Name: {{Identity.firstName}} {{Identity.lastName}}
+          <div class="col">
+            <div class="h5 mt-2">
+              Name: {{Identity.firstName}} {{Identity.lastName}}
+            </div>
+            <div>
+              Account: {{Identity.accountName}}, P.No.: {{Identity.personalNumber}}
+            </div>
+            <div>
+              Department: {{Identity.department}}, Cost Center: {{Identity.costCenter}}
+            </div>
+            <div>
+              Start Date: {{Identity.startDate | date: "yyyy-MM-dd"}}, End Date: {{Identity.endDate | date:
+              "yyyy-MM-dd"}}
+            </div>
           </div>
-          <div>
-            Account: {{Identity.accountName}}, P.No.: {{Identity.personalNumber}}
+          <div class="col">
+            <button type="button" class="btn btn-danger" (click)="DeleteIdentity(Identity)">Delete</button>
           </div>
-          <div>
-            Department: {{Identity.department}}, Cost Center: {{Identity.costCenter}}
-          </div>
-          <div>
-            Start Date: {{Identity.startDate | date: "yyyy-MM-dd"}}, End Date: {{Identity.endDate | date: "yyyy-MM-dd"}}
-          </div>        
         </div>
       </div>
-
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
     </div>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
   </div>
 </div>
