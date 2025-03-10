@@ -110,4 +110,8 @@ export class AppComponent {
       startDate: new Date(),
     }
   }
+
+  genIdentityAccName():void {
+    this.cmIdentity.accountName = `${this.cmIdentity.firstName}${this.cmIdentity.lastName.substring(0,3)}`
+  } 
 }

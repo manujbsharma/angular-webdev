@@ -8,14 +8,14 @@
       <div class="row m-4">
         <div class="col">
           <label class="form-label" for="frmFirstname"> First Name:</label>
-          <input class="form-control" type="text" id="frmFirstname" [(ngModel)]="cmIdentity.firstName"
+          <input class="form-control" type="text" id="frmFirstname" [(ngModel)]="cmIdentity.firstName" (change)="genIdentityAccName()"
             placeholder="must contain atleast 3 characters" />
           <!-- two way binding with the help of [(ngModel)] = "definedObj.property" -->
         </div>
         <div class="col">
           <label class="form-label" for="frmLastname">Last Name:</label>
-          <input class="form-control" type="text" id="frmLastname" placeholder="must contain atleast 3 characters"
-            [(ngModel)]="cmIdentity.lastName" />
+          <input class="form-control" type="text" id="frmLastname" placeholder="must contain atleast 3 characters" 
+            [(ngModel)]="cmIdentity.lastName" (change)="genIdentityAccName()"/>
         </div>
       </div>
       <div class="row m-4">
