@@ -7,49 +7,52 @@
     <div class="grid">
       <div class="row m-4">
         <div class="col">
-          <label class="form-label" for="frmfirstname" > First Name:</label>
-          <input class='form-control' type="text" id="frmFirstname" placeholder="must contain atleast 3 characters" />
+          <label class="form-label" for="frmFirstname"> First Name:</label>
+          <input class="form-control" type="text" id="frmFirstname" [(ngModel)]="cmIdentity.firstName"
+            placeholder="must contain atleast 3 characters" />
+          <!-- two way binding with the help of [(ngModel)] = "definedObj.property" -->
         </div>
         <div class="col">
           <label class="form-label" for="frmLastname">Last Name:</label>
-          <input class="form-control" type="text" id="frmLastname" placeholder="must contain atleast 3 characters"/>
-        </div>        
+          <input class="form-control" type="text" id="frmLastname" placeholder="must contain atleast 3 characters"
+            [(ngModel)]="cmIdentity.lastName" />
+        </div>
       </div>
       <div class="row m-4">
         <div class="col">
-          <label class="form-label" for="frmpnr" > Personal Number:</label>
-          <input class='form-control' type="number" id="frmpnr"  />
+          <label class="form-label" for="frmpnr"> Personal Number:</label>
+          <input class='form-control' type="number" id="frmpnr" [(ngModel)]="cmIdentity.personalNumber" />
         </div>
         <div class="col">
           <label class="form-label" for="frmAccname">Account Name:</label>
-          <input class="form-control" type="text" id="frmAccname" />
-        </div>        
+          <input class="form-control" type="text" id="frmAccname" [(ngModel)]="cmIdentity.accountName" />
+        </div>
       </div>
       <div class="row m-4">
         <div class="col">
           <label class="form-label" for="frmDepartment"> Department:</label>
-          <input class='form-control' type="text" id="frmDepartment" />
+          <input class='form-control' type="text" id="frmDepartment" [(ngModel)]="cmIdentity.department" />
         </div>
         <div class="col">
           <label class="form-label" for="frmCostcenter"> Cost Center:</label>
-          <input class="form-control" type="text" id="frmCostcenter" />
-        </div>        
+          <input class="form-control" type="text" id="frmCostcenter" [(ngModel)]="cmIdentity.costCenter" />
+        </div>
       </div>
       <div class="row m-4">
         <div class="col">
           <label class="form-label" for="frmStartdate"> Start Date:</label>
-          <input class='form-control' type="date" id="frmStartdate" />
+          <input class='form-control' type="date" id="frmStartdate" [(ngModel)]="cmIdentity.startDate" />
         </div>
         <div class="col">
           <label class="form-label" for="frmEnddate"> End Date:</label>
-          <input class="form-control" type="date" id="frmEnddate" />
-        </div>        
+          <input class="form-control" type="date" id="frmEnddate" [(ngModel)]="cmIdentity.endDate" />
+        </div>
       </div>
       <div class="row m-4">
         <!-- Submit Button -->
         <div class="col">
-          <button class="btn btn-primary">Submit</button>
-        </div>        
+          <button class="btn btn-primary" (click)="addIdentity()">Submit</button>
+        </div>
       </div>
     </div>
   </div>
@@ -79,7 +82,7 @@
           </div>
         </div>
       </div>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
     </div>
   </div>
 </div>

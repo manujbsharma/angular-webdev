@@ -34,7 +34,7 @@ export class AppComponent {
     firstName: "Manuj",
     lastName: "Sharma",
     accountName: "Facebook",
-    personalNumber: 1002345,
+    personalNumber: 1,
     costCenter: "Delhi",
     department: "IT",
     startDate: new Date('1977-09-24'),
@@ -44,7 +44,7 @@ export class AppComponent {
     firstName: "Manuj",
     lastName: "Sharma",
     accountName: "Facebook",
-    personalNumber: 1002345,
+    personalNumber: 2,
     costCenter: "Delhi",
     department: "IT",
     startDate: new Date('1977-09-24'),
@@ -54,7 +54,7 @@ export class AppComponent {
     firstName: "Manuj",
     lastName: "Sharma",
     accountName: "Facebook",
-    personalNumber: 1002345,
+    personalNumber: 3,
     costCenter: "Delhi",
     department: "IT",
     startDate: new Date('1977-09-24'),
@@ -64,7 +64,7 @@ export class AppComponent {
     firstName: "Manuj",
     lastName: "Sharma",
     accountName: "Facebook",
-    personalNumber: 1002345,
+    personalNumber: 4,
     costCenter: "Delhi",
     department: "IT",
     startDate: new Date('1977-09-24'),
@@ -74,7 +74,7 @@ export class AppComponent {
     firstName: "Manuj",
     lastName: "Sharma",
     accountName: "Facebook",
-    personalNumber: 1002345,
+    personalNumber: 5,
     costCenter: "Delhi",
     department: "IT",
     startDate: new Date('1977-09-24'),
@@ -82,8 +82,32 @@ export class AppComponent {
 
   },];
 
+  // Delete Function
   DeleteIdentity(MyIdentity: identity): void {
     // filter the identities(all records), just remove the current records
     this.Identities = this.Identities.filter(i => i != MyIdentity) // Take my set of identites (identities), put filter on it, and in filter => take all (i) beside/except the one i was entering/selecting (MyIdentity)
+  }
+
+  cmIdentity: identity = {
+    firstName: "",
+    lastName: "",
+    accountName: "",
+    personalNumber: Math.max(...this.Identities.map(obj => obj.personalNumber)) + 1,
+    costCenter: "",
+    department: "",
+    startDate: new Date(),
+  }
+
+  addIdentity(): void {
+    this.Identities.push(this.cmIdentity);
+    this.cmIdentity = {
+      firstName: "",
+      lastName: "",
+      accountName: "",
+      personalNumber: Math.max(...this.Identities.map(obj => obj.personalNumber)) + 1,
+      costCenter: "",
+      department: "",
+      startDate: new Date(),
+    }
   }
 }
